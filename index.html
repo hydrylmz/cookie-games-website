@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Games</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,14 +16,17 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        section {
+            scroll-margin-top: 70px;
+        }
+
         body {
             background-color: #2b1810;
             color: #f5e6d3;
         }
 
-        /* Header Stili */
         header {
-            background: linear-gradient(rgba(43, 24, 16, 0.7), rgba(43, 24, 16, 0.7)), url('/api/placeholder/1920/1080');
+            background: linear-gradient(rgba(43, 24, 16, 0.7), rgba(43, 24, 16, 0.7)), url('./images/header-bg.jpg');
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -60,7 +67,6 @@
             color: #d4a676;
         }
 
-        /* Ana Bölüm Stilleri */
         .hero-title {
             font-size: 4em;
             margin-bottom: 20px;
@@ -84,6 +90,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .cta-button:hover {
@@ -92,7 +100,6 @@
             border-color: #d4a676;
         }
 
-        /* Oyunlar Bölümü */
         .games-section {
             padding: 80px 20px;
             text-align: center;
@@ -138,7 +145,6 @@
             margin-bottom: 15px;
         }
 
-        /* İletişim Bölümü */
         .contact-section {
             padding: 80px 20px;
             text-align: center;
@@ -195,7 +201,6 @@
             display: block;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
@@ -238,18 +243,19 @@
 
     <header id="home">
         <h1 class="hero-title">Cookie Games</h1>
-        <p class="hero-subtitle">Oyun Oynamak Hiç Bu Kadar Tatlı Olmamıştı</p>
-        <button class="cta-button">Oyunlarımızı Keşfet</button>
+        <p class="hero-subtitle">Tatlı hayallerinizi oyuna dönüştürüyoruz</p>
+        <a href="#games" class="cta-button">Oyunlarımızı Keşfet</a>
     </header>
 
     <section id="games" class="games-section">
-        <h2>Oyunlarımız</h2>
+        <h2>Popüler Oyunlarımız</h2>
         <div class="games-grid">
             <div class="game-card">
-                <img src="/api/placeholder/300/200" alt="Oyun 1" class="game-image">
+                <img src="./images/oyun1.jpg" alt="Oyun 1" class="game-image">
                 <h3>Evil Girl Sprint</h3>
-                <p>RPG elementleri taşıyan eğlenceli ve pratik bir Hyper-Casual oyun!</p>
+                <p>RPG temaları barındıran eğlenceli ve hızlı bir Hyper-Casual runner oyunu.</p>
             </div>
+
         </div>
     </section>
 
@@ -257,7 +263,6 @@
         <h2>Bizimle İletişime Geçin</h2>
         <div class="contact-form">
             <form action="https://formsubmit.co/support@cookiegames.fun" method="POST">
-                <input type="hidden" name="_next" value="https://your-website.com/thanks.html">
                 <input type="hidden" name="_subject" value="Yeni Cookie Games İletişim Formu Mesajı!">
                 
                 <input type="text" name="name" placeholder="Adınız" required>
@@ -276,5 +281,16 @@
     <footer>
         <p>&copy; 2025 Cookie Games. Tüm hakları saklıdır.</p>
     </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            if (window.location.hash) {
+                const element = document.querySelector(window.location.hash);
+                if (element) {
+                    element.scrollIntoView();
+                }
+            }
+        });
+    </script>
 </body>
 </html>
