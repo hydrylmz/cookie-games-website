@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #2b1810;
+            color: #f5e6d3;
+        }
+
+        /* Header Stili */
+        header {
+            background: linear-gradient(rgba(43, 24, 16, 0.7), rgba(43, 24, 16, 0.7)), url('/api/placeholder/1920/1080');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(86, 48, 32, 0.9);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #f5e6d3;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4a676;
+        }
+
+        /* Ana Bölüm Stilleri */
+        .hero-title {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #d4a676;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #f5e6d3;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #8b4513;
+            color: #f5e6d3;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            background-color: #a0522d;
+            transform: translateY(-2px);
+            border-color: #d4a676;
+        }
+
+        /* Oyunlar Bölümü */
+        .games-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .games-section h2 {
+            color: #d4a676;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .game-card {
+            background-color: #563020;
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            border: 2px solid #d4a676;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .game-card h3 {
+            color: #d4a676;
+            margin: 10px 0;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* İletişim Bölümü */
+        .contact-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #563020;
+        }
+
+        .contact-section h2 {
+            color: #d4a676;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #2b1810;
+            border: 2px solid #d4a676;
+            border-radius: 10px;
+            color: #f5e6d3;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(212, 166, 118, 0.3);
+        }
+
+        .form-message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .success {
+            background-color: #4CAF50;
+            color: white;
+            display: block;
+        }
+
+        .error {
+            background-color: #f44336;
+            color: white;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2b1810;
+            border-top: 2px solid #d4a676;
+        }
+
+        footer p {
+            color: #f5e6d3;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .game-card {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Ana Sayfa</a></li>
+            <li><a href="#games">Oyunlar</a></li>
+            <li><a href="#contact">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1 class="hero-title">Cookie Games</h1>
+        <p class="hero-subtitle">Oyun Oynamak Hiç Bu Kadar Tatlı Olmamıştı</p>
+        <button class="cta-button">Oyunlarımızı Keşfet</button>
+    </header>
+
+    <section id="games" class="games-section">
+        <h2>Oyunlarımız</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <img src="/api/placeholder/300/200" alt="Oyun 1" class="game-image">
+                <h3>Evil Girl Sprint</h3>
+                <p>RPG elementleri taşıyan eğlenceli ve pratik bir Hyper-Casual oyun!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Bizimle İletişime Geçin</h2>
+        <div class="contact-form">
+            <form action="https://formsubmit.co/support@cookiegames.fun" method="POST">
+                <input type="hidden" name="_next" value="https://your-website.com/thanks.html">
+                <input type="hidden" name="_subject" value="Yeni Cookie Games İletişim Formu Mesajı!">
+                
+                <input type="text" name="name" placeholder="Adınız" required>
+                <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                <textarea name="message" rows="5" placeholder="Mesajınız" required></textarea>
+                
+                <input type="hidden" name="_captcha" value="false">
+                
+                <button type="submit" class="cta-button">Gönder</button>
+                
+                <div id="formMessage" class="form-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cookie Games. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>
