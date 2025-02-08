@@ -1,43 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
+    <title>Privacy Policy - Cookie Games</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
+            background-color: #2b1810;
+            color: #f5e6d3;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(86, 48, 32, 0.9);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #f5e6d3;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4a676;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 100px; /* To avoid content being hidden behind the fixed nav */
+        }
+
+        h1, h2, h3 {
+            color: #d4a676;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #d4a676;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #f5e6d3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2b1810;
+            border-top: 2px solid #d4a676;
+            margin-top: 40px;
+        }
+
+        footer p {
+            color: #f5e6d3;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: [Date]</p>
-    
-    <h2>1. Introduction</h2>
-    <p>Welcome to [Your Studio Name]. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal data.</p>
-    
-    <h2>2. Information We Collect</h2>
-    <p>We may collect certain data, including but not limited to:</p>
-    <ul>
-        <li>Contact details (e.g., email, name)</li>
-        <li>Usage data (e.g., pages visited, time spent on site)</li>
-    </ul>
-    
-    <h2>3. How We Use Your Information</h2>
-    <p>We use your information for:</p>
-    <ul>
-        <li>Improving our services</li>
-        <li>Responding to inquiries</li>
-        <li>Marketing purposes (with consent)</li>
-    </ul>
-    
-    <h2>4. Third-Party Services</h2>
-    <p>We do not share your personal data with third parties except for necessary services (e.g., hosting providers).</p>
-    
-    <h2>5. Contact Us</h2>
-    <p>If you have any questions about our Privacy Policy, contact us at: [Your Contact Email]</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Privacy Policy</h1>
+        <p><strong>Last updated:</strong> [08.02.2025]</p>
+
+        <h2>1. Introduction</h2>
+        <p>Welcome to Cookie Games. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal data.</p>
+
+        <h2>2. Information We Collect</h2>
+        <p>Cookie Games does not collect any form of data or information from users, this may vary in future, any changes will be given in the list, on this page.:</p>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <h2>4. Third-Party Services</h2>
+        <p>We do not share your personal data with third parties except for necessary services (e.g., hosting providers).</p>
+
+        <h2>5. Contact Us</h2>
+        <p>If you have any questions about our Privacy Policy, contact us at: <a href="mailto:support@cookiegames.fun">support@cookiegames.fun</a></p>
+    </div>
+
+    <footer>
+        <p>© 2025 Cookie Games. All rights reserved.</p>
+    </footer>
 </body>
 </html>
